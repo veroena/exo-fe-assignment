@@ -1,9 +1,27 @@
-import { Header } from "./components/Header"
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { Box } from '@mui/material'
+import { Header } from './components/Header'
+import { PopulatedTable } from './PopulatedTable'
+
+const queryClient = new QueryClient()
 
 export const App = () => {
+  
   return (
-    <div>
+    <QueryClientProvider client={queryClient}>
       <Header title='Exoticca Fe Assignment' />
-    </div>
+      <Box 
+        display="flex"
+        width="100%" 
+        justifyContent="center" 
+        alignItems="center"
+        sx={{backgroundColor: '#12161E', color: 'white'}}
+      >
+        <Box width="90%" padding="10px 20px">
+          <PopulatedTable />
+        </Box>
+      </Box>
+    </QueryClientProvider>
   )
 }
+
