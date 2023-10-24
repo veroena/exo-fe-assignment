@@ -1,6 +1,7 @@
-import {render, screen} from '@testing-library/react'
+import {act, render, screen} from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { SearchInput } from './SearchInput'
+
 
 const mockedOnChange = jest.fn()
 
@@ -16,10 +17,10 @@ describe('SearchInput', () => {
 
   })
 
-  it('should call the provided function when typing in the input', () => {
+  it('should call the provided function when typing in the input', async () => {
     setup()
-    userEvent.type(screen.getByLabelText('fakeLabel'), 't')
-
+    await act(() => userEvent.type(screen.getByLabelText('fakeLabel'), 't'))
+    
     expect(mockedOnChange).toHaveBeenCalledWith('t')
   })
 })

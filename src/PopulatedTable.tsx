@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { Alert, CircularProgress, TableCell, TableRow } from "@mui/material"
 import { useGetData } from "./useGetData"
 import { CustomTable } from "./components/CustomTable"
+import { SearchInput } from "./components/SearchInput"
 
 export interface ListProps {
   title: string
@@ -51,7 +52,10 @@ const tableContent = ({status, error, list} : {status: DataStatus, error: Error 
         </TableRow>
       )
     case 'success':
-      return <TableData list={list} />
+      return list?.length === 0 ?
+        <TableRow><TableCell colSpan={4} sx={{color: 'white'}}>No results match your search</TableCell></TableRow>
+        :
+        <TableData list={list} />
   }
 }
 
@@ -63,11 +67,21 @@ export const PopulatedTable = () => {
   useEffect(() => {
     setFilteredData(data)
   }, [data])
+
+  const handleInputChange = (searchTerm: string) => { 
+    const filteredItems = data.filter((item: ListProps) =>
+    item.title.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+    setFilteredData(filteredItems)
+  }
   
 
   return(
-    <CustomTable headers={['title', 'body', 'id', 'userId']}>
-      {tableContent({status: status, error: error, list: filteredData})}
-    </CustomTable>
+    <>
+      <SearchInput onChangeCallback={handleInputChange} label="Filter by title here" />
+      <CustomTable headers={['title', 'body', 'id', 'userId']}>
+        {tableContent({status: status, error: error, list: filteredData})}
+      </CustomTable>
+    </>
   )
 }
