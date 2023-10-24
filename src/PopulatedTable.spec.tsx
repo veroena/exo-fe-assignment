@@ -41,6 +41,13 @@ describe('PopulatedTable', () => {
 
       expect(screen.getByText('No results match your search')).toBeVisible()
     })
+
+    it('should show titles in italics when the id is a prime number', () => {
+      setup('success')
+
+      expect(screen.getByText('fakeTitle1')).toHaveStyle('font-style: normal')
+      expect(screen.getByText('fakeTitle2')).toHaveStyle('font-style: italic')
+    })
   })
 
   it('should display loader component when the request status is loading', () => {

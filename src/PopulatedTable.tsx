@@ -15,12 +15,21 @@ export type DataStatus = 'pending' | 'error' | 'success'
 
 const TableData = ({list}: {list: Array<ListProps>}) => {
 
+  const isPrimeNumber = (number: number) => {
+    if(number > 1) {
+      for (let i = 2; i <= Math.sqrt(number); i++) {
+        if (number % i === 0) return false;
+      }
+      return true;
+    }
+  }
+
   return(
     <>
       {list?.map((item) => {
         return (
           <TableRow key={item.id}>
-            <TableCell sx={{color: 'white'}}>{item.title}</TableCell>
+            <TableCell sx={{color: 'white', fontStyle: isPrimeNumber(item.id) ? 'italic' : 'normal'}}>{item.title}</TableCell>
             <TableCell sx={{color: 'white'}}>{item.body}</TableCell>
             <TableCell sx={{color: 'white'}}>{item.id}</TableCell>
             <TableCell sx={{color: 'white'}}>{item.userId}</TableCell>
