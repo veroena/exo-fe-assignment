@@ -1,5 +1,9 @@
+import { Header } from "./Header"
+
 export const App = () => {
   return (
-    <div>Exoticca FrontEnd Assignment</div>
+    <div>
+      <Header title='Exoticca Fe Assignment' />
+    </div>
   )
 }
