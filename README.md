@@ -1,4 +1,10 @@
-# Getting Started with Create React App
+# Exoticca Technical Assignment Frontend
+
+This project consists of a table with data that allows showing and filtering entities. The data is retrieved from a mocked API and it can be filtered by title. All of the items with ids as prime numbers have the title in italics. 
+
+The stack used is [React](https://reactjs.org/), [Typescript](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html), [React Query](https://tanstack.com/query/latest/docs/react/overview), [Jest](https://jestjs.io/es-ES/) and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/). [Material UI](https://mui.com/) was used for the components.
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
