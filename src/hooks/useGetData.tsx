@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query"
+import { useQuery } from '@tanstack/react-query'
 
 export const useGetData =() => {
   const { error, data, status } = useQuery({

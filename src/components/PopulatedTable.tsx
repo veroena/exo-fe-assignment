@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react"
-import { Alert, CircularProgress, TableCell, TableRow } from "@mui/material"
-import { useGetData } from "./useGetData"
-import { CustomTable } from "./components/CustomTable"
-import { SearchInput } from "./components/SearchInput"
+import { useEffect, useState } from 'react'
+import { Alert, CircularProgress, TableCell, TableRow } from '@mui/material'
+import { useGetData } from '../hooks/useGetData'
+import { SearchInput } from './common/SearchInput'
+import { CustomTable } from './common/CustomTable'
 
 export interface ListProps {
   title: string

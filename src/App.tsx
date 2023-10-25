@@ -1,7 +1,7 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { Box } from '@mui/material'
-import { Header } from './components/Header'
-import { PopulatedTable } from './PopulatedTable'
+import { Header } from './components/common/Header'
+import { PopulatedTable } from './components/PopulatedTable'
 
 const queryClient = new QueryClient()
 

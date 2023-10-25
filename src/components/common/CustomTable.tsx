@@ -1,4 +1,4 @@
-import { Table, TableBody, TableCell, TableHead, TableRow } from "@mui/material"
+import { Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material'
 
 export const CustomTable = ({headers, children} : {headers: Array<string>, children: React.ReactElement}) => {
   return (

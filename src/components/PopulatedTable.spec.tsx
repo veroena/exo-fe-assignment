@@ -1,6 +1,6 @@
-import { render, screen } from "@testing-library/react"
-import * as useGetData from './useGetData'
-import { PopulatedTable, ListProps, DataStatus } from "./PopulatedTable"
+import { render, screen } from '@testing-library/react'
+import * as useGetData from '../hooks/useGetData'
+import { PopulatedTable, ListProps, DataStatus } from './PopulatedTable'
 
 const mockedData: Array<ListProps> = [
   {

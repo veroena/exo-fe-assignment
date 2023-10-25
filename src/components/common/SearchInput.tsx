@@ -1,5 +1,5 @@
-import { useState } from "react"
-import { TextField } from "@mui/material"
+import { useState } from 'react'
+import { TextField } from '@mui/material'
 
 export const SearchInput = ({ onChangeCallback, label }: {onChangeCallback : (searchTerm: string) => void, label: string}) => {
   const [value, setValue] = useState<string>('')

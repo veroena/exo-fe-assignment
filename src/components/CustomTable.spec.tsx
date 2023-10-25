@@ -1,6 +1,6 @@
-import { render, screen } from "@testing-library/react"
-import { CustomTable } from "./CustomTable"
-import { TableCell, TableRow } from "@mui/material"
+import { render, screen } from '@testing-library/react'
+import { CustomTable } from './common/CustomTable'
+import { TableCell, TableRow } from '@mui/material'
 
 const setup = () => {
   render(<CustomTable headers={['fakeHeader1', 'fakeHeader2']} children={<TableRow><TableCell>this is a fake element</TableCell></TableRow>} />)
